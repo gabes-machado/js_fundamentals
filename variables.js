@@ -1,64 +1,58 @@
-// diferences between var, let and const
+// Diferenças entre var, let e const
 
 /*
-
-In JavaScript, var, let, and const are used to declare variables, but they have some differences:
+No JavaScript, var, let e const são usados para declarar variáveis, mas eles têm algumas diferenças:
 
 var:
-It is the oldest keyword to declare a variable in JavaScript.
-- var declarations are globally scoped or function scoped. This means that any variable that is declared with var outside 
-a function block is available for use in the whole window var is function scoped when it is declared within a function.
-- var variables can be updated and re-declared within its scope2.
-- var variables are hoisted to the top of their scope and initialized with a value of undefined2.
+É a palavra-chave mais antiga para declarar uma variável em JavaScript.
+- As declarações var têm escopo global ou escopo de função. Isso significa que qualquer variável que seja declarada com var fora de um bloco de função está disponível para uso em toda a janela. var tem escopo de função quando é declarada dentro de uma função.
+- As variáveis var podem ser atualizadas e redeclaradas dentro de seu escopo.
+- As variáveis var são içadas para o topo de seu escopo e inicializadas com um valor indefinido.
 
 let:
-- let is an improved version of var and was introduced in ES61.
-- let variables are block scoped21. This means they can only be accessed within the block they were declared.
-- let variables can be updated but not re-declared21.
+- let é uma versão aprimorada de var e foi introduzida no ES6.
+- As variáveis let têm escopo de bloco. Isso significa que só podem ser acessadas dentro do bloco em que foram declaradas.
+- As variáveis let podem ser atualizadas, mas não redeclaradas.
 
 const:
-- const also has block scope21.
-- const variables can neither be updated nor re-declared21. This means once a const variable has been assigned, you cannot change its value or re-declare it.
+- const também tem escopo de bloco.
+- As variáveis const não podem ser atualizadas nem redeclaradas. Isso significa que uma vez que uma variável const tenha sido atribuída, você não pode mudar seu valor ou redeclará-la.
 
-Good practice:
-In general, developers are advised to use let and const instead of var to avoid confusion and bugs3. Use let when you know that the value of a variable will change, and use const when the value is constant and won’t change3.
-
+Boa prática:
+Em geral, os desenvolvedores são aconselhados a usar let e const em vez de var para evitar confusão e bugs. Use let quando souber que o valor de uma variável mudará, e use const quando o valor for constante e não mudará.
 */
 
-// Example: triangle area
+// Exemplo: área do triângulo
 
-var height = 5;
+var altura = 5;
 var base = 10;
-var area = (base * height) / 2;
+var area = (base * altura) / 2;
 
-console.log(area)
+console.log(area) // Imprime a área do triângulo no console
 
-// type convert
+// Conversão de tipos
 
-// implicit convert
+// Conversão implícita
 
-const number = 456;
-const numberString = '456';
+const numero = 456;
+const numeroString = '456';
 
-console.log(number == numberString) // true
+console.log(numero == numeroString) // true, porque '==' realiza a conversão de tipos
 
-// explicit convert
+// Conversão explícita
 
-console.log(Number(numberString) === number) // true
+console.log(Number(numeroString) === numero) // true, porque '===' não realiza a conversão de tipos
 
 /*
-
-different types of '=': '=' atribuition, '==' loose equality performs type coercion
-meaning it converts the operands to a common type before comparison It can lead to unexpected results due to implicit type conversions.
-'===' strict equality does not perform type coercion, and considers operands of different types to be different.
-It is generally recommended to use strict equality to avoid unexpected results due to implicit type conversions.
-
+Diferentes tipos de '=': '=' é atribuição, '==' é igualdade solta que realiza a coerção de tipo, ou seja, converte os operandos para um tipo comum antes da comparação. Isso pode levar a resultados inesperados devido às conversões de tipo implícitas.
+'===' é igualdade estrita que não realiza a coerção de tipo, e considera operandos de tipos diferentes como diferentes.
+É geralmente recomendado usar a igualdade estrita para evitar resultados inesperados devido a conversões de tipo implícitas.
 */
 
-// template strings
+// Strings de modelo
 
-const name = 'Gabriel';
-const age = 22;
-const city = 'Brasília';
+const nome = 'Gabriel';
+const idade = 22;
+const cidade = 'Brasília';
 
-console.log('Meu nome é ${name}, tenho ${age} anos e moro em ${city}.')
+console.log(`Meu nome é ${nome}, tenho ${idade} anos e moro em ${cidade}.`) // Note o uso de crases (`) em vez de aspas simples ('') ou duplas ("")
